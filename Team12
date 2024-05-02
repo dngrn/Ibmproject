@@ -1,0 +1,131 @@
+import matplotlib.pyplot as plt
+Subscribers=[477.9, 368.1, 151.1, 55.4, 62.9]
+users = [250, 200, 150, 100, 300]
+colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99','#c2c2f0']
+explode = (0.1, 0, 0, 0, 0.1)
+plt.figure(figsize=(8, 6))
+plt.pie(users, explode=explode, labels=Subscribers, colors=colors, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.title('SUBSCRIBERS')
+plt.show()
+
+
+import pandas as pd
+from matplotlib import pyplot as plt
+from matplotlib import style
+style.use('ggplot')
+Instagram= ['Cristiano','Ariana','Zendaya','Chris','MALUMA']
+Youtube= ['.','.','.','.','.']
+Instagram_subscribers=[477.9, 329.6, 151.1, 17.7, 62.9]
+Youtube_subscribers=[270, 100, 139.4, 79, 146.2]
+plt.bar(Instagram, Instagram_subscribers , color = 'violet')
+plt.bar(Youtube, Youtube_subscribers, color='orange')
+plt.title('comparision')
+plt.ylabel(' subscribers')
+plt.xlabel('platform')
+plt.show()
+
+
+
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+data = np. array (I
+[100, 80], # Country 1
+[120, 90],
+# Country 2
+[150, 100], # Country 3
+[130, 110], # Country 4
+[110, 100] # Country 5
+countries = ['Country 1', 'Country 2', 'Country 3*, 'Country 4', 'Country 5']
+difference = data[:, 0] - data[:, 1]
+plt. figure(figsize=(8, 6))
+sns.heatmap(difference.reshape(-1, 1), map='coolwarm', annot=True, fmt='g', yticklabels=countries, xticklabels=['Instagram - YouTube'])
+plt.title( 'Difference in Instagram and YouTube Usage Across Major Countries')
+plt. xlabel ('Platforms')
+plt. ylabel ('Countries')
+plt. show()
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+age_groups = ['13-17', 18-24, 25-34*, *35-44", '45+"]
+instagram_usage = [100, 120, 150, 130, 110]
+youtube_usage = 180, 90, 100, 110, 100.
+plt. figure(figsize=(10, 6))
+pIt. bar (age_groups, instagram_usage, label='Instagram' a color='skyblue')
+plt. bar (age
+_groups, youtube_usage, bottom=instagram _usage, label='YouTube', color='orange')
+plt. xlabel ('Age Groups')
+plt. ylabel ( 'Number of Users')
+plt. title( 'Usage of Instagram and YouTube Across Different Age Groups')
+plt. legend()
+plt. show()
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+data = (
+'Influencer': ['cristiano', 'Ariana"
+, 'Zendaya', 'Chris', 'Maluma'],
+'Followers': [1000000, 500000, 800000, 400000,678000,
+'Engagement_Rate': [5, 8, 6,9,2]
+｝
+df = pd. DataFrame(data)
+plt. figure(figsize=(10, 6))
+plt. scatter(df[ 'Followers'], df[ 'Engagement_Rate'], s=df['Followers']*0.0001, alpha=0.5) plt. xlabel ('Number of Followers') plt. ylabel ('Engagement Rate (%) ') plt. title('Social Media Influencers') for i, txt in enumerate(df [ 'Influencer']) :
+plt. annotate(txt, (df[ 'Followers'] [i], df['Engagement_Rate'][i]))
+plt. grid(True)
+plt. show()
+
+
+
+
+import pandas as pd import matplotlib.pyplot as plt
+data = {
+'Date': ['2022-01-01', 2022-02-01', 2022-03-01', 2022-04-01, 2022-05-01'],
+'Cristiano_Ronaldo': [100000000, 101000000, 102000000, 103000000, 104000000|, 
+'ArianaGrande': [120000000, 121000000, 122000000, 123000000, 124000000],
+'Zendaya': [80000000, 81000000, 82000000, 83000000, 84000000],
+'Chris_Evans': [15000000, 15100000, 15200000, 15300000, 15400000],
+'Maluma': [60000000, 61000000, 62000000, 63000000, 64000000]
+df = pd. DataFrame (data) 
+df[ 'Date'] = pd.to._datetime(df['Date'])
+plt. figure(figsize=(10, 6))
+for influencer in ['Cristiano_Ronaldo', 'Ariana_Grande', 'Zendaya', 'Chris_Evans', 'Maluma']:
+plt. plot(df['Date'], df [influencer], marker='o', label=influencer.replace('-' plt. xlabel ('Date')
+plt. ylabel ('Number of Followers')
+plt. title( 'Instagram Followers Over Time')
+plt. legend ()
+plt. grid True)
+plt. xticks(rotation=45)
+plt. tight_ layout ()
+plt. show()
+
+
+
+import numpy as np import matplotlib.pyplot as plt
+influencers = ['Cristiano Ronaldo", 'Ariana Grande', 'Zendaya", 'Chris Evans', 'Maluma']
+categories = ['Sports', "Music", 'Acting']
+scores = np.array([
+19, 3, 2], # Cristiano Ronaldo
+[2, 9, 5],# Ariana Grande
+[1, 5, 9],#zendaya
+[7, 3, 8],# Chris Evans
+[3, 7, 4] # Maluma
+])
+num_categories = len (categories)
+fig, ax = plt. subplots(figsize=(8, 8), subplot_kw=dict (polar-True))
+angles = np. linspace(0, 2 * np.pi, num_categories, endpoint=False). tolist()
+scores = np. concatenate((scores, scores[:, [0]]), axis=1)
+angles += angles [:1]
+for i, influencer in enumerate (influencers):
+ax. plot(angles, scores[i], linewidth=2, label=influencer)
+ax. fill(angles, scores[i], alpha=0.25)
+ax. set_theta_offset(np.pi / 2)
+ax.set_theta_direction(-1)
+plt.xticks(angles[:-1], categories)
+plt. legend (loc='upper right', bbox_to_anchor=(1.1, 1-1))
+plt. show()
+
+
